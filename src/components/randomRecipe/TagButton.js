@@ -16,9 +16,9 @@ export const TagButton = ({ buttonText, onPress, selected }) => {
 
 const styles = StyleSheet.create({
   btnContainer: {
-    paddingVertical: 5,
+    paddingVertical: 4,
     paddingHorizontal: 8,
-    borderRadius: 20,
+    borderRadius: 18,
     borderWidth: 2,
     borderColor: COLORS.darkLime,
     margin: 4,

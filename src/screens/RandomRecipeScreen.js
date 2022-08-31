@@ -20,7 +20,7 @@ const RandomRecipeScreen = ({ navigation, route }) => {
     try {
       const res = await recipesApi.get(`/random?number=1&tags=${tags}`);
       setRecipesList(res.data.recipes[0]);
-      console.log(tags);
+      // console.log(tags);
     } catch (error) {
       console.log(error);
     }

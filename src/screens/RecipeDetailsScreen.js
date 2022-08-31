@@ -25,38 +25,40 @@ const Recipe = ({ route }) => {
   useEffect(() => {
     let { id } = route.params;
     getRecipeDetails(id);
-    console.log(id);
+    // console.log(id);
   }, []);
 
   const steps = recipeDetails?.analyzedInstructions[0].steps;
 
   return (
-    <ScrollView
-      style={{
-        flex: 1,
-        backgroundColor: COLORS.lightLime,
-      }}
-    >
+    <>
       <Background />
-      <View
+      <ScrollView
         style={{
           flex: 1,
+          // backgroundColor: COLORS.lightLime,
         }}
       >
-        <GradientImage headTitle={recipeDetails?.title} headImage={recipeDetails?.image} />
+        <View
+          style={{
+            flex: 1,
+          }}
+        >
+          <GradientImage headTitle={recipeDetails?.title} headImage={recipeDetails?.image} />
 
-        <DietIcons diet={recipeDetails} />
+          <DietIcons diet={recipeDetails} />
 
-        <RecipeDetails recipeDetails={recipeDetails} />
+          <RecipeDetails recipeDetails={recipeDetails} />
 
-        <IngredientsList recipeDetails={recipeDetails} />
+          <IngredientsList recipeDetails={recipeDetails} />
 
-        <RecipeInstructions steps={steps} />
+          <RecipeInstructions steps={steps} />
 
-        <View style={{ height: 50 }} />
-      </View>
-      <BackButton />
-    </ScrollView>
+          <View style={{ height: 50 }} />
+        </View>
+        <BackButton />
+      </ScrollView>
+    </>
   );
 };
 

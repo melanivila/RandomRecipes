@@ -1,8 +1,9 @@
 import axios from 'axios';
+import { REACT_APP_API_KEY } from '@env';
 
 export const recipesApi = axios.create({
   baseURL: 'https://api.spoonacular.com/recipes',
   params: {
-    apiKey: process.env.REACT_APP_API_KEY,
+    apiKey: REACT_APP_API_KEY,
   },
 });

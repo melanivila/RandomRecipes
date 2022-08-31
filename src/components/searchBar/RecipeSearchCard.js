@@ -19,7 +19,7 @@ export const RecipeSearchCard = ({ item }) => {
         borderBottomRightRadius: 10,
         borderTopRightRadius: 10,
         borderColor: COLORS.darkLime,
-        backgroundColor: COLORS.lightLime,
+        backgroundColor: COLORS.transparentBlack1,
       }}
     >
       <View

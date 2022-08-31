@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
   },
   textBg: {
     flexDirection: 'row',
-    backgroundColor: '#F3F1F3',
+    backgroundColor: '#fcfafa',
     borderRadius: 50,
     height: 40,
     marginHorizontal: 10,

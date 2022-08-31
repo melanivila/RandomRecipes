@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { Dimensions, Text, View, Platform, Button, ScrollView } from 'react-native';
+import { Dimensions, Text, View, Platform, Button, ScrollView, StyleSheet } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { recipesApi } from '../api/recipesApi';
 import { BackButton } from '../components/common/BackButton';
 import { Background } from '../components/common/Background';
+import { CustomButton } from '../components/common/CustomButton';
 import { Loading } from '../components/common/Loading';
 import { RecipeSearchCard } from '../components/searchBar/RecipeSearchCard';
 import { SearchInput } from '../components/searchBar/SearchInput';
@@ -46,24 +47,37 @@ export const SearchScreen = () => {
         style={{
           marginHorizontal: 30,
           marginVertical: 8,
-          top: 10,
+          top: 12,
           textAlign: 'right',
           marginBottom: top + 80,
-          ...FONTS.h2,
+          ...FONTS.h3,
           color: COLORS.darkLime,
         }}
       >
         Search{term && `: "${term}"`}
       </Text>
       {recipesList && (
-        <ScrollView>
+        <ScrollView showsVerticalScrollIndicator={false}>
           {recipesList?.map((item) => {
             return <RecipeSearchCard item={item} key={item.id} />;
           })}
         </ScrollView>
       )}
-      <Button title="search" onPress={() => loadRecipes(term)} color={COLORS.darkLime} />
+      <CustomButton
+        buttonText="SEARCH"
+        buttonContainerStyle={styles.searchBtn}
+        onPress={() => loadRecipes(term)}
+      />
+      {/* <Button title="search" onPress={() => loadRecipes(term)} color={COLORS.darkLime} /> */}
       <BackButton color={COLORS.darkLime} />
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  searchBtn: {
+    backgroundColor: COLORS.darkLime,
+    height: 45,
+    justifyContent: 'center',
+  },
+});

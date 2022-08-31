@@ -31,10 +31,10 @@ export const IngredientsList = ({ recipeDetails }) => {
       <View style={{ marginLeft: 10 }}>
         <FlatList
           data={recipeDetails?.extendedIngredients}
-          keyExtractor={(item) => item.id.toString()}
+          keyExtractor={(item, index) => index}
           horizontal
           showsHorizontalScrollIndicator={false}
-          renderItem={({ item }) => <IngredientCard item={item} key={item.id} />}
+          renderItem={({ item }) => <IngredientCard item={item} />}
         />
       </View>
     </>
