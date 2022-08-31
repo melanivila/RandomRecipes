@@ -4,15 +4,7 @@ import { COLORS } from '../../constants/theme';
 
 export const DietIcons = ({ diet }) => {
   return (
-    <View
-      style={{
-        height: 0,
-        alignItems: 'flex-end',
-        top: 5,
-        marginRight: 5,
-        flexDirection: 'column-reverse',
-      }}
-    >
+    <View style={styles.container}>
       {diet?.vegetarian && (
         <Image source={require('../../assets/images/vegetarian.png')} style={styles.icon} />
       )}
@@ -30,6 +22,13 @@ export const DietIcons = ({ diet }) => {
 };
 
 const styles = StyleSheet.create({
+  container: {
+    height: 0,
+    alignItems: 'flex-end',
+    top: 5,
+    marginRight: 5,
+    flexDirection: 'column-reverse',
+  },
   icon: {
     width: 25,
     height: 25,

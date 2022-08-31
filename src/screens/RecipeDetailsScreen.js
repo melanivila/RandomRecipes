@@ -42,7 +42,6 @@ const Recipe = ({ route }) => {
         <ScrollView
           style={{
             flex: 1,
-            // backgroundColor: COLORS.lightLime,
           }}
         >
           <View

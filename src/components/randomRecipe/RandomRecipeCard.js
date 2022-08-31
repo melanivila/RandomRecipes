@@ -11,45 +11,12 @@ const cardHeight = cardWidth * 1.3;
 export const RandomRecipeCard = ({ recipeItem, onPress, getRecipes }) => {
   return (
     <View style={styles.mainContainer}>
-      <TouchableOpacity
-        style={{
-          height: cardHeight,
-          width: cardWidth,
-          marginRight: 20,
-          borderRadius: SIZES.radius,
-        }}
-        onPress={onPress}
-        activeOpacity={0.9}
-      >
-        <Image
-          source={{ uri: recipeItem?.image }}
-          resizeMode="cover"
-          style={{ width: cardWidth, height: cardHeight, borderRadius: SIZES.radius }}
-        />
-        <View
-          style={{
-            position: 'absolute',
-            flexDirection: 'row',
-            flexWrap: 'wrap',
-            top: 15,
-            left: 15,
-            marginRight: 10,
-          }}
-        >
+      <TouchableOpacity style={styles.touchable} onPress={onPress} activeOpacity={0.9}>
+        <Image source={{ uri: recipeItem?.image }} resizeMode="cover" style={styles.recipeImg} />
+        <View style={styles.typesContainer}>
           {recipeItem?.dishTypes.map((element, index) => {
             return (
-              <View
-                style={{
-                  marginRight: 3,
-                  marginBottom: 3,
-                  overflow: 'hidden',
-                  paddingHorizontal: SIZES.radius,
-                  paddingVertical: 5,
-                  backgroundColor: COLORS.transparentBlack5,
-                  borderRadius: SIZES.radius,
-                }}
-                key={index}
-              >
+              <View style={styles.type} key={index}>
                 <Text style={{ color: COLORS.white, ...FONTS.h4 }}>{element}</Text>
               </View>
             );
@@ -105,6 +72,30 @@ const styles = StyleSheet.create({
 
     elevation: 7,
     marginVertical: 15,
+  },
+  touchable: {
+    height: cardHeight,
+    width: cardWidth,
+    marginRight: 20,
+    borderRadius: SIZES.radius,
+  },
+  recipeImg: { width: cardWidth, height: cardHeight, borderRadius: SIZES.radius },
+  typesContainer: {
+    position: 'absolute',
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    top: 15,
+    left: 15,
+    marginRight: 10,
+  },
+  type: {
+    marginRight: 3,
+    marginBottom: 3,
+    overflow: 'hidden',
+    paddingHorizontal: SIZES.radius,
+    paddingVertical: 5,
+    backgroundColor: COLORS.transparentBlack5,
+    borderRadius: SIZES.radius,
   },
   recipeCardContainer: {
     position: 'absolute',

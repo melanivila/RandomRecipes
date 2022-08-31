@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image, Text, TouchableOpacity, View } from 'react-native';
+import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import { useNavigation } from '@react-navigation/native';
 
@@ -8,20 +8,7 @@ import { FONTS, COLORS } from '../../constants/theme';
 export const RecipeSearchCard = ({ item }) => {
   const navigation = useNavigation();
   return (
-    <View
-      style={{
-        flexDirection: 'row',
-        paddingHorizontal: 20,
-        marginHorizontal: 25,
-        marginVertical: 12,
-        alignItems: 'center',
-        borderRightWidth: 35,
-        borderBottomRightRadius: 10,
-        borderTopRightRadius: 10,
-        borderColor: COLORS.darkLime,
-        backgroundColor: COLORS.transparentBlack1,
-      }}
-    >
+    <View style={styles.container}>
       <View
         style={{
           height: 60,
@@ -58,3 +45,18 @@ export const RecipeSearchCard = ({ item }) => {
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    flexDirection: 'row',
+    paddingHorizontal: 20,
+    marginHorizontal: 25,
+    marginVertical: 12,
+    alignItems: 'center',
+    borderRightWidth: 35,
+    borderBottomRightRadius: 10,
+    borderTopRightRadius: 10,
+    borderColor: COLORS.darkLime,
+    backgroundColor: COLORS.transparentBlack1,
+  },
+});

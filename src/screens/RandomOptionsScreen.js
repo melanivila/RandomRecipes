@@ -5,7 +5,6 @@ import { CustomButton } from '../components/common/CustomButton';
 import { TagButton } from '../components/randomRecipe/TagButton';
 import { COLORS, FONTS } from '../constants/theme';
 import { BackButton } from '../components/common/BackButton';
-import { GradientImage } from '../components/common/GradientImage';
 import { Background } from '../components/common/Background';
 const { mealType, diets, cuisines } = require('../api/tags.json');
 
@@ -51,7 +50,7 @@ export const RandomOptionsScreen = () => {
           Select at least one option of the above to start
         </Text>
         <Text style={styles.optionType}>DISH</Text>
-        <View style={{ flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center' }}>
+        <View style={styles.tagsContainer}>
           {mealType.map((tag) => {
             return (
               <TagButton
@@ -64,7 +63,7 @@ export const RandomOptionsScreen = () => {
           })}
         </View>
         <Text style={styles.optionType}>DIET</Text>
-        <View style={{ flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center' }}>
+        <View style={styles.tagsContainer}>
           {diets.map((tag) => {
             return (
               <TagButton
@@ -77,7 +76,7 @@ export const RandomOptionsScreen = () => {
           })}
         </View>
         <Text style={styles.optionType}>CUISINE</Text>
-        <View style={{ flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center' }}>
+        <View style={styles.tagsContainer}>
           {cuisines.map((tag) => {
             return (
               <TagButton
@@ -125,4 +124,5 @@ const styles = StyleSheet.create({
     color: COLORS.darkLime,
     right: 30,
   },
+  tagsContainer: { flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center' },
 });
