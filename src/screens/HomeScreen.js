@@ -1,6 +1,7 @@
+import React, { useEffect } from 'react';
+import SplashScreen from 'react-native-splash-screen';
 import { useNavigation } from '@react-navigation/native';
-import React from 'react';
-import { View, StatusBar } from 'react-native';
+import { View } from 'react-native';
 import { CustomButton } from '../components/common/CustomButton';
 import { GradientImage } from '../components/common/GradientImage';
 
@@ -8,6 +9,10 @@ import { COLORS } from '../constants/theme';
 
 const HomeScreen = () => {
   const navigation = useNavigation();
+
+  useEffect(() => {
+    SplashScreen.hide();
+  }, []);
 
   return (
     <View style={{ flex: 1, backgroundColor: COLORS.black }}>

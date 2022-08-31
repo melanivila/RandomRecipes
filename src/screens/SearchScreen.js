@@ -14,7 +14,6 @@ const { width: screenWidth } = Dimensions.get('window');
 
 export const SearchScreen = () => {
   const { top } = useSafeAreaInsets();
-  const [isFetching, setIsFetching] = useState(true);
   const [recipesList, setRecipesList] = useState([]);
   const [term, setTerm] = useState('');
 
@@ -26,7 +25,6 @@ export const SearchScreen = () => {
       const res = await recipesApi.get(`/complexSearch?query=${query}&number=20`);
       setRecipesList(res.data.results);
     }
-    setIsFetching(false);
   };
 
   return (
@@ -36,7 +34,6 @@ export const SearchScreen = () => {
         onDebounce={(value) => setTerm(value)}
         style={{
           position: 'absolute',
-          // zIndex: 999,
           width: screenWidth - 40,
           marginHorizontal: 20,
           top: Platform.OS === 'ios' ? top : top + 10,
@@ -68,7 +65,6 @@ export const SearchScreen = () => {
         buttonContainerStyle={styles.searchBtn}
         onPress={() => loadRecipes(term)}
       />
-      {/* <Button title="search" onPress={() => loadRecipes(term)} color={COLORS.darkLime} /> */}
       <BackButton color={COLORS.darkLime} />
     </View>
   );
@@ -77,7 +73,7 @@ export const SearchScreen = () => {
 const styles = StyleSheet.create({
   searchBtn: {
     backgroundColor: COLORS.darkLime,
-    height: 45,
+    height: 50,
     justifyContent: 'center',
   },
 });
