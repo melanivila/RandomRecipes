@@ -1,0 +1,76 @@
+{
+  "mealType": [
+    {
+      "name": "main course",
+      "id": 1
+    },
+    {
+      "name": "side dish",
+      "id": 2
+    },
+    {
+      "name": "dessert",
+      "id": 3
+    },
+    {
+      "name": "appetizer",
+      "id": 4
+    },
+    {
+      "name": "breakfast",
+      "id": 5
+    },
+    {
+      "name": "snack",
+      "id": 6
+    }
+  ],
+  "diets": [
+    {
+      "name": "glutenFree",
+      "id": 7
+    },
+    {
+      "name": "vegan",
+      "id": 8
+    },
+    {
+      "name": "vegetarian",
+      "id": 9
+    },
+    {
+      "name": "keto",
+      "id": 10
+    },
+    {
+      "name": "paleo",
+      "id": 11
+    }
+  ],
+  "cuisines": [
+    {
+      "name": "american",
+      "id": 12
+    },
+    {
+      "name": "chinese",
+      "id": 13
+    },
+    {
+      "name": "french",
+      "id": 14
+    },
+    {
+      "name": "italian",
+      "id": 15
+    },
+    {
+      "name": "mexican",
+      "id": 16
+    },
+    {
+      "name": "thai",
+      "id": 17
+    }
+  ]
+}
