@@ -30,9 +30,12 @@ export const SearchScreen = () => {
   return (
     <View style={{ flex: 1 }}>
       <Background />
-      <SearchInput onDebounce={(value) => setTerm(value)} style={styles.searchInput} />
+      <SearchInput
+        onDebounce={(value) => setTerm(value)}
+        style={{ ...styles.searchInput, top: Platform.OS === 'ios' ? top : top + 10 }}
+      />
 
-      <Text style={styles.term}>Search{term && `: "${term}"`}</Text>
+      <Text style={{ ...styles.term, marginBottom: top + 80 }}>Search{term && `: "${term}"`}</Text>
       {recipesList && (
         <ScrollView showsVerticalScrollIndicator={false}>
           {recipesList?.map((item) => {
@@ -60,14 +63,13 @@ const styles = StyleSheet.create({
     position: 'absolute',
     width: screenWidth - 40,
     marginHorizontal: 20,
-    top: Platform.OS === 'ios' ? top : top + 10,
   },
   term: {
     marginHorizontal: 30,
     marginVertical: 8,
     top: 12,
     textAlign: 'right',
-    marginBottom: top + 80,
+
     ...FONTS.h3,
     color: COLORS.darkLime,
   },
