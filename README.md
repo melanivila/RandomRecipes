@@ -1,10 +1,8 @@
-# Random Recipe!
+# Random Recipe!!["Random Recipe logo"](https://github.com/melanivila/RandomRecipes/blob/master/src/assets/images/tiny-logo.png)
 
 ## _If you need help deciding what to eat, you need Random Recipe_
 
-![N|Solid]("https://github.com/melanivila/RandomRecipes.git/src/assets/images/logo.png")
-
-Random Recipe is an Android App that helps you find the perfect meal.
+### Random Recipe is an Android App that helps you find the perfect meal.
 
 ## Features
 
@@ -31,7 +29,7 @@ npx react-native run-android
 
 ## API
 
-To make the App work you will need to configure the .env with the API key from Spoonacular.
+To make the App work you will need to configure the .env with the API key from _Spoonacular_.
 
 > Spoonacular is a food management system that combines dining out, eating store-bought food, and cooking at home to help you find and organize the restaurants, products, and recipes that fit your diet and can help you reach your nutrition goals.
 
